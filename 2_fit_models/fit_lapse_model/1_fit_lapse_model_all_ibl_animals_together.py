@@ -14,7 +14,7 @@ if __name__ == '__main__':
     data_dir = '../../data/ibl/data_for_cluster/'
     results_dir = '../../results/ibl_global_fit/'
 
-    num_lapse_params = 1
+    num_lapse_params = 2
     num_folds = 5
 
     # Fit GLM to all data

@@ -11,7 +11,7 @@ np.random.seed(65)
 
 if __name__ == '__main__':
 
-    num_lapse_params = 1
+    num_lapse_params = 2
 
     data_dir = '../../data/ibl/data_for_cluster/data_by_animal/'
     results_dir = '../../results/ibl_individual_fit/'
