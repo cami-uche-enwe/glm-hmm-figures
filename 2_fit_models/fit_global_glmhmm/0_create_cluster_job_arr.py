@@ -3,8 +3,8 @@
 import numpy as np
 
 K_vals = [2, 3, 4, 5]
-num_folds = 5
-N_initializations = 20
+num_folds = 2
+N_initializations = 4
 
 if __name__ == '__main__':
     cluster_job_arr = []
