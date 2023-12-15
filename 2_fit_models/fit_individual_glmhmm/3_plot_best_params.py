@@ -183,7 +183,7 @@ if __name__ == '__main__':
             plt.xlabel("State", fontsize=30)
             plt.xticks(range(K), range(1, K + 1), fontsize=30)
             plt.yticks(fontsize=30)
-            plt.title("State occuupancies", fontsize=40)
+            plt.title("State occupancies", fontsize=40)
 
             fig.suptitle(animal, fontsize=40)
             fig.savefig(save_dir + animal + '.png')

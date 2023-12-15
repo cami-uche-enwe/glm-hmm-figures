@@ -79,6 +79,7 @@ if __name__ == '__main__':
                 predictive_acc_lapse.append(predictive_acc)
             predictive_acc_mat.append(predictive_acc_lapse)
 
+        # GLM-HMM fit:
         for K in range(2, 6):
             with open(results_dir + "/best_init_cvbt_dict.json", 'r') as f:
                 best_init_cvbt_dict = json.load(f)
