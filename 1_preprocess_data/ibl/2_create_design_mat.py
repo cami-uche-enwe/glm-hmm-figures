@@ -11,20 +11,20 @@ from preprocessing_utils import load_animal_list, load_animal_eid_dict, \
 npr.seed(65)
 
 if __name__ == '__main__':
-    data_dir = '../../data/ibl/'
+    data_dir = '../../data/human/'
     # Create directories for saving data:
     processed_ibl_data_path = data_dir + "data_for_cluster/"
     if not os.path.exists(processed_ibl_data_path):
         os.makedirs(processed_ibl_data_path)
     # Also create a subdirectory for storing each individual animal's data:
-    if not os.path.exists(processed_ibl_data_path + "data_by_animal/"):
-        os.makedirs(processed_ibl_data_path + "data_by_animal/")
+    if not os.path.exists(processed_ibl_data_path + "data_by_sbj/"):
+        os.makedirs(processed_ibl_data_path + "data_by_sbj/")
 
     # Load animal list/results of partial processing:
     animal_list = load_animal_list(
-        data_dir + 'partially_processed/animal_list.npz')
+        data_dir + 'partially_processed/sbj_list.npz')
     animal_eid_dict = load_animal_eid_dict(
-        data_dir + 'partially_processed/animal_eid_dict.json')
+        data_dir + 'partially_processed/sbj_eid_dict.json')
 
     # Require that each animal has at least 30 sessions (=2700 trials) of data:
     req_num_sessions = 30  # 30*90 = 2700

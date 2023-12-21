@@ -17,15 +17,15 @@ DOWNLOAD_DATA = True  # change to True to download raw data (WARNING: this
 # can take a while)
 
 if __name__ == '__main__':
-    ibl_data_path = "../../data/ibl/"
+    ibl_data_path = "../../data/human/"
     if DOWNLOAD_DATA: # Warning: this step takes a while
         if not os.path.exists(ibl_data_path):
             os.makedirs(ibl_data_path)
         # download IBL data
-        url = 'https://ndownloader.figshare.com/files/21623715'
+        url = 'https://doi.org/10.6084/m9.figshare.4300043'
         wget.download(url, ibl_data_path)
         # now unzip downloaded data:
-        with ZipFile(ibl_data_path + "ibl-behavior-data-Dec2019.zip",
+        with ZipFile(ibl_data_path + "CSV.zip",
                      'r') as zipObj:
             # extract all the contents of zip file in ibl_data_path
             zipObj.extractall(ibl_data_path)
@@ -56,8 +56,8 @@ if __name__ == '__main__':
             animal_eid_dict[animal].append(eid)
 
     json = json.dumps(animal_eid_dict)
-    f = open("partially_processed/animal_eid_dict.json",  "w")
+    f = open("partially_processed/sbj_eid_dict.json",  "w")
     f.write(json)
     f.close()
 
-    np.savez('partially_processed/animal_list.npz', animal_list)
+    np.savez('partially_processed/sbj_list.npz', animal_list)
